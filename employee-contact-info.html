@@ -1,0 +1,55 @@
+<div id="themeToggle">⚙️</div>
+
+<div id="themePanel" style="display:none;">
+  <h3>Customize Theme</h3>
+  <label>Theme Presets</label>
+  <select id="themePresetPicker">
+    <option value="">Select a theme…</option>
+    <option value="midnight">Midnight Slate</option>
+    <option value="softcloud">Soft Cloud</option>
+    <option value="modernteal">Modern Teal</option>
+    <option value="blush">Blush & Charcoal</option>
+    <option value="ember">Ember Noir</option>
+    <option value="frost">Frostbyte</option>
+    <option value="sandstone">Sandstone</option>
+    <option value="grape">Neon Grape</option>
+  </select>
+  <button id="resetTheme">Reset to Default</button>
+</div>
+
+<section class="card expandable">
+    <button class="expand-toggle">Update Contact Information</button>
+  
+    <div class="expand-body">
+      <form id="contactUpdateForm">
+  
+        <label>
+          Full Name
+          <input type="text" name="name" required />
+        </label>
+  
+        <label>
+          Phone Number
+          <input type="tel" name="phone" placeholder="555-555-5555" />
+        </label>
+  
+        <label>
+          Email Address
+          <input type="email" name="email" placeholder="name@example.com" />
+        </label>
+  
+        <label>
+          Address
+          <input type="text" name="address" placeholder="Street, City, State" />
+        </label>
+  
+        <label>
+          Emergency Contact
+          <input type="text" name="emergencyContact" placeholder="Name & Phone" />
+        </label>
+  
+        <button type="submit">Save Updates</button>
+      </form>
+    </div>
+  </section>
+  <script src="theme.js"></script>

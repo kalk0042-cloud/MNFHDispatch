@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Funeral Home Details</title>
+
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="theme.css">
+
+  <script src="directory.js"></script>
+  <script src="drawer.js"></script>
+  <script src="theme.js" defer></script>
+  <script src="funeralHomeDetail.js" defer></script>
+</head>
+
+<body data-theme="modernteal">
+
+  
+  <nav class="top-nav">
+    <button id="drawerToggle" class="drawer-toggle">☰</button>
+
+    <div class="nav-links">
+      <a href="dashboard.html">Dashboard</a>
+      <a href="call-intake.html">Call Intake</a>
+      <a href="firstCallForm.html">First Call</a>
+      <a href="serviceRequest.html">Service Request</a>
+      <a href="employee-portal.html">Employee Portal</a>
+    </div>
+
+    <div id="themeToggle">⚙️</div>
+  </nav>
+
+
+  <div id="themePanel" style="display:none;">
+    <h3>Customize Theme</h3>
+    <label>Theme Presets</label>
+    <select id="themePresetPicker">
+      <option value="">Select a theme…</option>
+      <option value="midnight">Midnight Slate</option>
+      <option value="softcloud">Soft Cloud</option>
+      <option value="modernteal">Modern Teal</option>
+      <option value="blush">Blush & Charcoal</option>
+      <option value="ember">Ember Noir</option>
+      <option value="frost">Frostbyte</option>
+      <option value="sandstone">Sandstone</option>
+      <option value="grape">Neon Grape</option>
+    </select>
+    <button id="resetTheme">Reset to Default</button>
+  </div>
+
+  <aside id="drawer" class="drawer">
+    <input id="fhSearch" placeholder="Search funeral homes">
+    <div id="fhList"></div>
+  </aside>
+
+ 
+  <main class="app-shell">
+
+
+    <h1 id="fhNameHeader">Funeral Home</h1>
+
+    <section class="card">
+      <h2>General Information</h2>
+
+      <div id="fhPhotoContainer" style="margin-bottom:1rem;">
+        <img id="fhPhoto" class="fh-photo" alt="Funeral Home Photo">
+      </div>
+
+      <p><strong>Name:</strong> <span id="fhName"></span></p>
+      <p><strong>Address:</strong> <span id="fhAddress"></span></p>
+      <p><strong>City:</strong> <span id="fhCity"></span></p>
+
+      <!-- JS expects these three separate fields -->
+      <p><strong>Main Phone:</strong> <span id="fhPhoneMain"></span></p>
+      <p><strong>Alt Phone:</strong> <span id="fhPhoneAlt"></span></p>
+      <p><strong>DID Number:</strong> <span id="fhDid"></span></p>
+
+      <p><strong>Emails:</strong></p>
+      <ul id="fhEmails"></ul>
+
+      <p><strong>Website:</strong> 
+        <a id="fhWebsite" href="#" target="_blank">Visit Website</a>
+      </p>
+
+      <p><strong>Obituaries:</strong> 
+        <a id="fhObits" href="#" target="_blank">View Obituaries</a>
+      </p>
+    </section>
+
+
+    <section class="card">
+      <h2>Hours & Access</h2>
+      <p><strong>Hours:</strong> <span id="fhHours"></span></p>
+      <p><strong>Door Code:</strong> <span id="fhDoorCode"></span></p>
+
+      <p><strong>Special Instructions:</strong></p>
+      <div id="fhSpecial"></div>
+    </section>
+
+  
+    <section class="card expandable">
+      <button class="expand-toggle">Directors</button>
+      <div class="expand-body">
+        <ul id="fhDirectors"></ul>
+      </div>
+    </section>
+
+    <section class="card expandable">
+      <button class="expand-toggle">Related Funeral Homes</button>
+      <div class="expand-body">
+        <ul id="fhRelated"></ul>
+      </div>
+    </section>
+
+
+    <section class="card">
+      <h2>Notes</h2>
+      <div id="fhNotes"></div>
+    </section>
+
+  </main>
+
+</body>
+</html>

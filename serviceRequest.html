@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Service Request</title>
+
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="theme.css">
+
+  <script src="directory.js"></script>
+<script src="drawer.js"></script>
+  <script src="theme.js" defer></script>
+  <script src="service-request.js" defer></script>
+</head>
+
+<body data-theme="modernteal">
+
+  <nav class="top-nav">
+    <button id="drawerToggle" class="drawer-toggle">☰</button>
+
+    <div class="nav-links">
+      <a href="dashboard.html">Dashboard</a>
+      <a href="call-intake.html">Call Intake</a>
+      <a href="firstCallForm.html">First Call</a>
+      <a class="active" href="serviceRequest.html">Service Request</a>
+      <a href="employee-portal.html">Employee Portal</a>
+    </div>
+
+    <div id="themeToggle">⚙️</div>
+  </nav>
+
+  <div id="themePanel" style="display:none;">
+    <h3>Customize Theme</h3>
+    <label>Theme Presets</label>
+    <select id="themePresetPicker">
+      <option value="">Select a theme…</option>
+      <option value="midnight">Midnight Slate</option>
+      <option value="softcloud">Soft Cloud</option>
+      <option value="modernteal">Modern Teal</option>
+      <option value="blush">Blush & Charcoal</option>
+      <option value="ember">Ember Noir</option>
+      <option value="frost">Frostbyte</option>
+      <option value="sandstone">Sandstone</option>
+      <option value="grape">Neon Grape</option>
+    </select>
+    <button id="resetTheme">Reset to Default</button>
+  </div>
+
+  
+  <aside id="drawer" class="drawer">
+    <input id="fhSearch" placeholder="Search funeral homes">
+    <div id="fhList"></div>
+  </aside>
+
+  
+  <main class="app-shell">
+
+    <h1>Service Request</h1>
+    <p>Submit a service request for a funeral home.</p>
+
+    <section class="card">
+      <form id="serviceRequestForm">
+
+        <label>Funeral Home
+          <input name="funeralHome" required>
+        </label>
+
+        <label>Request Type
+          <select name="requestType" required>
+            <option value="">Select</option>
+            <option>Transport</option>
+            <option>Removal</option>
+            <option>Paperwork</option>
+            <option>Follow-Up</option>
+            <option>Other</option>
+          </select>
+        </label>
+
+        <label>Caller Name
+          <input name="callerName">
+        </label>
+
+        <label>Caller Phone #
+          <input name="callerPhone">
+        </label>
+
+        <label>Deceased Name
+          <input name="deceasedName">
+        </label>
+
+        <label>Location / Address
+          <input name="location">
+        </label>
+
+        <label>Notes
+          <textarea name="notes"></textarea>
+        </label>
+
+        <label>Taken By
+          <input name="takenBy">
+        </label>
+
+        <button type="submit" class="primary-btn">Submit Service Request</button>
+      </form>
+    </section>
+
+  </main>
+
+</body>
+</html>

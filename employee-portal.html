@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Employee Portal</title>
+
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="theme.css" />
+  
+  <script src="directory.js"></script>
+  <script src="drawer.js"></script>  
+  <script src="theme.js" defer></script>
+  <script src="employee-portal.js" defer></script>
+</head>
+
+<body data-theme="modernteal">
+  <header class="top-nav">
+    <h1 id="greetingTitle">Hi</h1>
+
+    <nav class="nav-links">
+      <a href="dashboard.html">Dashboard</a>
+      <a href="directory.html">Directory</a>
+      <a href="firstCallForm.html">First Call Form</a>
+      <a href="call-intake.html">Call Intake</a>
+      <a href="serviceRequest.html">Service Request</a>
+      <a href="on-call-dashboard.html">On-Call Dashboard</a>
+      <a class="active" href="employee-portal.html">Employee Portal</a>
+    </nav>
+
+    <div id="themeToggle">⚙️</div>
+  </header>
+
+  <div id="themePanel" style="display:none;">
+    <h3>Customize Theme</h3>
+    <label>Theme Presets</label>
+    <select id="themePresetPicker">
+      <option value="">Select a theme…</option>
+      <option value="midnight">Midnight Slate</option>
+      <option value="softcloud">Soft Cloud</option>
+      <option value="modernteal">Modern Teal</option>
+      <option value="blush">Blush & Charcoal</option>
+      <option value="ember">Ember Noir</option>
+      <option value="frost">Frostbyte</option>
+      <option value="sandstone">Sandstone</option>
+      <option value="grape">Neon Grape</option>
+    </select>
+    <button id="resetTheme">Reset to Default</button>
+  </div>
+
+  <main class="portal-layout">
+    
+    <section class="card expandable">
+      <button class="expand-toggle">Request Time Off</button>
+      <div class="expand-body">
+        <form id="timeOffForm">
+          <label>
+            Full Name
+            <input type="text" name="name" required />
+          </label>
+
+          <label>
+            Start Date
+            <input type="date" name="startDate" required />
+          </label>
+
+          <label>
+            End Date
+            <input type="date" name="endDate" required />
+          </label>
+
+          <label>
+            Reason for Time Off
+            <textarea name="reason" rows="3" placeholder="Optional"></textarea>
+          </label>
+
+          <button type="submit">Submit Request</button>
+        </form>
+      </div>
+    </section>
+
+    <section class="card expandable">
+      <button class="expand-toggle">Update Contact Information</button>
+      <div class="expand-body">
+        <form id="contactUpdateForm">
+          <label>
+            Name
+            <input type="text" name="name" required />
+          </label>
+
+          <label>
+            Phone
+            <input type="tel" name="phone" />
+          </label>
+
+          <label>
+            Email
+            <input type="email" name="email" />
+          </label>
+
+          <button type="submit">Save Updates</button>
+        </form>
+      </div>
+    </section>
+
+   
+    <section class="card">
+      <h2>Employee Schedule</h2>
+      <p>Current month and next month</p>
+
+      <div class="schedule-wrapper">
+        <table class="schedule-table">
+          <thead>
+            <tr>
+              <th>Employee</th>
+              <th>Mon</th>
+              <th>Tue</th>
+              <th>Wed</th>
+              <th>Thu</th>
+              <th>Fri</th>
+              <th>Sat</th>
+              <th>Sun</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Kyle</td>
+              <td>A</td><td>A</td><td>A</td><td>A</td><td>X</td><td>A</td><td>A</td>
+            </tr>
+            <tr>
+              <td>Margaret</td>
+              <td>P</td><td>P</td><td>P</td><td>X</td><td>P</td><td>P</td><td>A</td>
+            </tr>
+            <tr>
+              <td>Matt</td>
+              <td>P</td><td>P</td><td>X</td><td>X</td><td>P</td><td>A</td><td>X</td>
+            </tr>
+            <tr>
+              <td>Christina</td>
+              <td>X</td><td>A</td><td>A</td><td>A</td><td>A</td><td>X</td><td>N</td>
+            </tr>
+            <tr>
+              <td>Ty</td>
+              <td>A</td><td>X</td><td>A</td><td>A</td><td>A</td><td>P</td><td>P</td>
+            </tr>
+            <tr>
+              <td>GiGi</td>
+              <td>N</td><td>N</td><td>N</td><td>N</td><td>N</td><td>N</td><td>P</td>
+            </tr>
+            <tr>
+              <td>Ann</td>
+              <td>N</td><td>X</td><td>X</td><td>N</td><td>N</td><td>N</td><td>N</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="schedule-legend">
+          <p><strong>A</strong> = AM shift</p>
+          <p><strong>P</strong> = PM shift</p>
+          <p><strong>N</strong> = Night shift</p>
+          <p><strong>X</strong> = Not available</p>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

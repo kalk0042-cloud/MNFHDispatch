@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Menu</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="theme.css">
+  <script src="theme.js" defer></script>
+
+</head>
+<body data-theme="modernteal">
+
+  <nav class="top-nav">
+    <button id="drawerToggle" class="drawer-toggle">☰</button>
+  
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="dashboard.html">Dashboard</a>
+      <a href="call-intake.html">Call Intake</a>
+      <a href="first-call.html">First Call</a>
+      <a href="service-request.html">Service Request</a>
+      <a href="funeral-homes.html">Funeral Homes</a>
+      <a href="on-call-dashboard.html">On‑Call</a>
+    </div>
+  
+    <button id="themeToggle" class="theme-btn">⚙️</button>
+  </nav>
+  
+
+  <aside id="drawer" class="drawer">
+    <input id="fhSearch" placeholder="Search funeral homes">
+    <div id="fhList"></div>
+  </aside>
+  
+
+ 
+  <div id="themePanel" style="display:none;">
+    <h3>Customize Theme</h3>
+
+    <label>Theme Presets</label>
+    <select id="themePresetPicker">
+      <option value="">Select a theme…</option>
+      <option value="midnight">Midnight Slate</option>
+      <option value="softcloud">Soft Cloud</option>
+      <option value="modernteal">Modern Teal</option>
+      <option value="blush">Blush & Charcoal</option>
+      <option value="ember">Ember Noir</option>
+      <option value="frost">Frostbyte</option>
+      <option value="sandstone">Sandstone</option>
+      <option value="grape">Neon Grape</option>
+    </select>
+
+    <button id="resetTheme">Reset to Default</button>
+  </div>
+
+  <script src="theme.js"></script>
+
+</body data-theme="modernteal">
+</html>
