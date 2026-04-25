@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Dashboard</title>
+
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="theme.css">
+
+  <script src="directory.js"></script>
+  <script src="drawer.js"></script>  
+  <script src="dashboard.js" defer></script>
+  <script src="theme.js" defer></script>
+</head>
+
+<body data-theme="modernteal">
+
+  <nav class="top-nav">
+    <button id="drawerToggle" class="drawer-toggle">☰</button>
+
+    <div class="nav-links">
+      <a class="active" href="dashboard.html">Dashboard</a>
+      <a href="call-intake.html">Call Intake</a>
+      <a href="firstCallForm.html">First Call</a>
+      <a href="serviceRequest.html">Service Request</a>
+      <a href="employee-portal.html">Employee Portal</a>
+    </div>
+
+    <div id="themeToggle">⚙️</div>
+  </nav>
+
+  <div id="themePanel" style="display:none;">
+    <h3>Customize Theme</h3>
+    <label>Theme Presets</label>
+    <select id="themePresetPicker">
+      <option value="">Select a theme…</option>
+      <option value="midnight">Midnight Slate</option>
+      <option value="softcloud">Soft Cloud</option>
+      <option value="modernteal">Modern Teal</option>
+      <option value="blush">Blush & Charcoal</option>
+      <option value="ember">Ember Noir</option>
+      <option value="frost">Frostbyte</option>
+      <option value="sandstone">Sandstone</option>
+      <option value="grape">Neon Grape</option>
+    </select>
+    <button id="resetTheme">Reset to Default</button>
+  </div>
+
+  <aside id="drawer" class="drawer">
+    <input id="fhSearch" placeholder="Search funeral homes">
+    <div id="fhList"></div>
+  </aside>
+
+
+  <main class="app-shell">
+
+    <div class="dashboard-header-row">
+      <h1 id="greetingTitle">Welcome</h1>
+      <div class="live-clock" id="liveClock">--:-- --</div>
+    </div>
+
+    <div class="dashboard-grid">
+
+      <!-- LEFT COLUMN -->
+      <div class="left-col">
+
+        <section class="card">
+          <h2>On‑Call Right Now</h2>
+          <div id="currentOnCall"></div>
+        </section>
+
+        <section class="card expandable">
+          <button class="expand-toggle">Upcoming On‑Call</button>
+          <div class="expand-body">
+            <div id="upcomingOnCall"></div>
+          </div>
+        </section>
+
+        <section class="card">
+          <h2>Quick Actions</h2>
+          <button class="primary-btn" onclick="location.href='firstCallForm.html'">New First Call</button>
+          <button class="primary-btn" onclick="location.href='call-intake.html'">New Message</button>
+          <button class="primary-btn" onclick="location.href='serviceRequest.html'">New Service Request</button>
+        </section>
+
+      </div>
+
+
+      <div class="right-col">
+        <section class="card">
+          <h2>Weather</h2>
+          <div id="weatherBlock">
+            <div class="weather-main" id="weatherTemp">--°</div>
+            <div class="weather-meta" id="weatherMeta">Loading…</div>
+          </div>
+        </section>
+      </div>
+
+    </div>
+
+    <section class="card">
+      <h2>Recent Calls</h2>
+
+      <div class="call-filters">
+        <label>
+          Type:
+          <select id="filterType">
+            <option value="all">All</option>
+            <option value="First Call">First Call</option>
+            <option value="Service">Service</option>
+            <option value="Message">Message</option>
+          </select>
+        </label>
+
+        <label>
+          Search:
+          <input id="filterSearch" placeholder="Caller, deceased, or funeral home">
+        </label>
+      </div>
+
+      <table id="callLogTable">
+        <thead>
+          <tr>
+            <th>Type</th>
+            <th>Caller</th>
+            <th>Phone</th>
+            <th>Deceased</th>
+            <th>Funeral Home</th>
+            <th>Time</th>
+          </tr>
+        </thead>
+        <tbody id="callLogBody"></tbody>
+      </table>
+    </section>
+
+  </main>
+
+</body>
+</html>
